@@ -15,7 +15,7 @@
 </head>
 <body>
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: July 22, 2026</p>
+  <p class="updated">Last updated: October 11, 2026</p>
 
   <p>Bobtail: Trucker Ledger ("Bobtail", "we", "our", or "us") is operated by Daniel Raherimanjato. This Privacy Policy explains how we collect, use, and protect your information when you use our iOS application.</p>
 
@@ -23,31 +23,40 @@
   <p>We collect only the information necessary to provide the app's features:</p>
   <ul>
     <li><strong>Account Information:</strong> Your email address and password (stored securely via Supabase authentication).</li>
-    <li><strong>Financial Data:</strong> Loads, expenses, fuel receipts, and IFTA mileage records you enter or scan within the app.</li>
-    <li><strong>Receipt Images:</strong> Photos you take within the app are sent to OpenAI's API for AI-powered data extraction. Images are not stored by us after processing.</li>
+    <li><strong>Business Records:</strong> Loads, expenses, fuel receipts, IFTA mileage records, maintenance details, and document information you enter or review within the app.</li>
+    <li><strong>Document Images:</strong> Photos you select or take for receipts, rate confirmations, settlements, or other attachments may remain on your device for review or offline retries. Images attached to saved records are retained on the device and may synchronize through Apple's private iCloud/CloudKit storage when available.</li>
+    <li><strong>AI Scan Data:</strong> With your permission, selected document images are sent through Bobtail's Supabase backend to OpenAI for information extraction. Bobtail retains the extracted response and an image fingerprint in Supabase for review, retries, caching, and scan-allowance management. The scan backend does not save the uploaded source image in Supabase file storage.</li>
     <li><strong>Device Information:</strong> Basic device identifiers used for crash reporting and app performance.</li>
   </ul>
 
   <h2>2. How We Use Your Information</h2>
   <ul>
     <li>To provide and improve the Bobtail app and its features.</li>
-    <li>To sync your data across your devices via Supabase cloud storage.</li>
-    <li>To process receipt images using OpenAI's GPT-4o Vision API for automatic data extraction.</li>
+    <li>To store records on your device and synchronize supported records and attached images through Apple iCloud/CloudKit when available. Synchronization depends on your iCloud settings, connectivity, and device state.</li>
+    <li>To authenticate your account and keep selected expense/load backup metadata and cached scan results in Supabase. This backup is not a complete copy of every record or attachment.</li>
+    <li>To extract document details through OpenAI after you allow AI processing, then let you review the suggested fields before saving.</li>
+    <li>To schedule optional reminders on your device according to your notification preferences.</li>
     <li>To manage your subscription via RevenueCat.</li>
     <li>To respond to support requests.</li>
   </ul>
 
+  <p>Before your first AI scan or field suggestion for an account on a device, Bobtail explains what will be sent and asks you to select <strong>Allow AI processing</strong>. You can choose <strong>Not now</strong> and enter records manually. You can withdraw permission in <strong>Settings → Privacy → AI document processing</strong>. Permission is specific to the Bobtail account on that device. Turning it off prevents new AI requests for that account from that device; it does not recall requests already sent or delete previously saved records or cached results.</p>
+
   <h2>3. Data Sharing</h2>
   <p>We do not sell your personal data. We share data only with the following service providers as necessary to operate the app:</p>
   <ul>
-    <li><strong>Supabase</strong> – cloud database and authentication (<a href="https://supabase.com/privacy">supabase.com/privacy</a>)</li>
-    <li><strong>OpenAI</strong> – receipt image processing (<a href="https://openai.com/privacy">openai.com/privacy</a>)</li>
+    <li><strong>Supabase</strong> – authentication, selected backup metadata, hosted scan requests, and cached extracted results (<a href="https://supabase.com/privacy">supabase.com/privacy</a>)</li>
+    <li><strong>OpenAI</strong> – AI document processing through its API (<a href="https://openai.com/enterprise-privacy/">API privacy information</a>)</li>
     <li><strong>RevenueCat</strong> – subscription management (<a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a>)</li>
-    <li><strong>Apple</strong> – in-app purchases and App Store services</li>
+    <li><strong>Apple</strong> – private iCloud/CloudKit storage and synchronization, in-app purchases, and App Store services</li>
   </ul>
+  <p>OpenAI's handling and retention of API request data are governed by the applicable API agreements and data-handling terms. The service providers listed above also handle data according to their applicable terms and policies.</p>
 
   <h2>4. Data Retention and Deletion</h2>
-  <p>Your data is retained as long as your account is active. You may delete your account at any time from within the app: <strong>Settings → Account → Delete Account</strong>. Upon deletion, all your data — including loads, expenses, IFTA records, and your authentication account — is permanently and irreversibly deleted from our servers.</p>
+  <p>Saved records and attached document images remain on your device and, when synchronization is available, in Apple iCloud/CloudKit until removed through the app's record or account cleanup. Selected images may also remain on the device while a review or offline retry is pending. Cached extracted scan responses and image fingerprints remain associated with your Supabase account until hosted account deletion.</p>
+  <p>You may request account deletion from within the app: <strong>Settings → Account → Delete Account</strong>. Hosted deletion requires an authenticated connection. A successful request removes the account's hosted profile, expense, load, and cached scan records, any owned files present in private Supabase storage, and the authentication account. If a required cleanup step fails, the app reports the failure and the request may need to be retried; some earlier cleanup steps may already have completed.</p>
+  <p>The app also cleans up the account's local records and attachments. Changes on other Apple devices depend on CloudKit synchronization, so disconnected devices cannot be guaranteed immediate erasure. Copies you saved outside Bobtail, such as exported reports or photos in your Photos library, are not removed by deleting the account. Provider handling of retained operational data is governed by the applicable provider terms and policies.</p>
+  <p>Deleting your Bobtail account does not cancel an Apple subscription. Manage or cancel it separately in <a href="https://apps.apple.com/account/subscriptions/">Apple subscription settings</a>.</p>
 
   <h2>5. Security</h2>
   <p>All data is transmitted over HTTPS. Passwords are hashed and never stored in plain text. We use industry-standard security practices to protect your information.</p>
